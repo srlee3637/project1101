@@ -29,12 +29,12 @@ public class JsonTest{
             	
                 if(jsonObj.get("정책용어").toString().contains(a)) {
                 System.out.println("정책용어: "+jsonObj.get("정책용어"));
-                System.out.println(jsonObj.get("생성배경"));
-                System.out.println(jsonObj.get("용어설명"));
-                System.out.println((String)jsonObj.get("현재 용어의 사용"));
-                System.out.println((String)jsonObj.get("해외사례"));
-                System.out.println((String)jsonObj.get("참고자료문헌"));
-                System.out.println((String)jsonObj.get("작성자"));
+                System.out.println("생성배경: "+jsonObj.get("생성배경"));
+                System.out.println("용어설명: "+jsonObj.get("용어설명"));
+                System.out.println("현재 용어의 사용: "+(String)jsonObj.get("현재 용어의 사용"));
+                System.out.println("해외사례: "+(String)jsonObj.get("해외사례"));
+                System.out.println("참고자료문헌: "+(String)jsonObj.get("참고자료문헌"));
+                System.out.println("작성자: "+(String)jsonObj.get("작성자"));
                 }
             }
          
