@@ -59,6 +59,7 @@ public class ReadJsonFileBySemin {
            for(int i=0; i<arrData.size(); i++){
               tmp = (JSONObject)arrData.get(i);
 
+              sb.append("busno("+i+"): " + tmp.get("busno")+"\n");
               sb.append("area("+i+"): " + tmp.get("area")+"\n");
               sb.append("name("+i+"): " + tmp.get("name")+"\n");
 
