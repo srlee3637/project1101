@@ -1,0 +1,10 @@
+{
+	"name" : "apple",  
+	"id" : 1,    
+	"price" : 1000
+
+	"name" : "melon",  
+	"id" : 2,    
+	"price" : 2000
+
+}
