@@ -54,6 +54,8 @@ public class FourDayProjectReadJsonBySemin {
 		// 변수에 읽어온 데이터 저장
 		value = sb.toString(); 
 
+		System.out.println(value);
+		
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -71,7 +73,7 @@ public class FourDayProjectReadJsonBySemin {
 		for(int i=0; i<arrData.size(); i++){
 			tmp = (JSONObject)arrData.get(i);
 
-			sb.append("동명("+i+"): " + tmp.get("동명")+"\n");
+			sb.append(";동명("+i+"): " + tmp.get("동명")+"\n");
 			sb.append("설치주소("+i+"): " + tmp.get("설치주소")+"\n");
 			sb.append("위  치("+i+"): " + tmp.get("위  치")+"\n");
 
@@ -84,10 +86,28 @@ public class FourDayProjectReadJsonBySemin {
 			//              }
 			sb.append("\n");
 		}
-		System.out.println(sb.toString());
+//		System.out.println(sb.toString());
+		
+		value = sb.toString();
+		System.out.println(value
+				);
 
 
-
+		
+		
+//		BufferedOutputStream bs = null;
+//	      Date d = new Date();
+//	      try {
+//	         bs = new BufferedOutputStream(new FileOutputStream("C:\\Users\\user\\Desktop\\jsonEx\\Sample.txt"));
+//	         String str = d + sb.toString();
+//	         bs.write(str.getBytes()); //Byte형으로만 넣을 수 있음
+//
+//	      } catch (Exception e) {
+//	                   e.getStackTrace();
+//	         // TODO: handle exception
+//	      }finally {
+//	         bs.close();
+//	      } 
 
 
 
