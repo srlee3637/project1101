@@ -1,11 +1,14 @@
 package java_1101;
 
+import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 
 import org.json.simple.JSONArray;
@@ -14,7 +17,7 @@ import org.json.simple.parser.JSONParser;
 
 public class FourDayProjectVOClassByTeammate {
 	
-   public static void main(String[] args) {
+   public static void main(String[] args) throws IOException {
 	   ArrayList<JsonByTozi> list = null;
       // 파싱한 데이터를 저장할 변수
       String result = "";
@@ -80,6 +83,21 @@ public class FourDayProjectVOClassByTeammate {
       System.out.println(list.get(list.size()-1));
       
       
+      StringBuilder sb = new StringBuilder();
+      
+      BufferedOutputStream bs = null;
+      Date d = new Date();
+      try {
+         bs = new BufferedOutputStream(new FileOutputStream("C:\\Users\\user\\Desktop\\jsonEx\\Sample.json"));
+         String str = d + sb.toString();
+         bs.write(str.getBytes()); //Byte형으로만 넣을 수 있음
+
+      } catch (Exception e) {
+                   e.getStackTrace();
+         // TODO: handle exception
+      }finally {
+         bs.close();
+      } 
       
       
       

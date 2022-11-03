@@ -60,54 +60,54 @@ public class FourDayProjectReadJsonBySemin {
 
 
 
-		// JSONParser에 JSON데이터를 넣어 파싱한 다음 JSONObject로 반환한다.
-		JSONObject objData = (JSONObject)new JSONParser().parse(value);
-		// JSONObject에서 Array데이터를 get하여 JSONArray에 저장한다.
-		JSONArray arrData = (JSONArray)objData.get("data");
-
-
-
-		// 배열 데이터 출력하기
-		JSONObject tmp;
-
-		for(int i=0; i<arrData.size(); i++){
-			tmp = (JSONObject)arrData.get(i);
-
-			sb.append(";동명("+i+"): " + tmp.get("동명")+"\n");
-			sb.append("설치주소("+i+"): " + tmp.get("설치주소")+"\n");
-			sb.append("위  치("+i+"): " + tmp.get("위  치")+"\n");
-
-			// Array데이터 안에 Array 데이터 꺼내기 
-			//              tmpArr = (JSONArray)tmp.get("items");
-			//              sb.append("genres("+i+"): ");
-			//              for(int j=0; j<tmpArr.size(); j++){
-			//                 sb.append(j+"." + tmpArr.get(j));
-			//                 if(j!=tmpArr.size()-1) sb.append(", ");
-			//              }
-			sb.append("\n");
-		}
-//		System.out.println(sb.toString());
-		
-		value = sb.toString();
-		System.out.println(value
-				);
-
-
-		
-		
-//		BufferedOutputStream bs = null;
-//	      Date d = new Date();
-//	      try {
-//	         bs = new BufferedOutputStream(new FileOutputStream("C:\\Users\\user\\Desktop\\jsonEx\\Sample.txt"));
-//	         String str = d + sb.toString();
-//	         bs.write(str.getBytes()); //Byte형으로만 넣을 수 있음
+//		// JSONParser에 JSON데이터를 넣어 파싱한 다음 JSONObject로 반환한다.
+//		JSONObject objData = (JSONObject)new JSONParser().parse(value);
+//		// JSONObject에서 Array데이터를 get하여 JSONArray에 저장한다.
+//		JSONArray arrData = (JSONArray)objData.get("data");
 //
-//	      } catch (Exception e) {
-//	                   e.getStackTrace();
-//	         // TODO: handle exception
-//	      }finally {
-//	         bs.close();
-//	      } 
+//
+//
+//		// 배열 데이터 출력하기
+//		JSONObject tmp;
+//
+//		for(int i=0; i<arrData.size(); i++){
+//			tmp = (JSONObject)arrData.get(i);
+//
+//			sb.append("동명("+i+"): " + tmp.get("동명")+"\n");
+//			sb.append("설치주소("+i+"): " + tmp.get("설치주소")+"\n");
+//			sb.append("위치("+i+"): " + tmp.get("위  치")+"\n");
+//
+//			// Array데이터 안에 Array 데이터 꺼내기 
+//			//              tmpArr = (JSONArray)tmp.get("items");
+//			//              sb.append("genres("+i+"): ");
+//			//              for(int j=0; j<tmpArr.size(); j++){
+//			//                 sb.append(j+"." + tmpArr.get(j));
+//			//                 if(j!=tmpArr.size()-1) sb.append(", ");
+//			//              }
+//			sb.append("\n");
+//		}
+////		System.out.println(sb.toString());
+//		
+//		value = sb.toString();
+//		System.out.println(value
+//				);
+
+
+		
+		
+		BufferedOutputStream bs = null;
+	      Date d = new Date();
+	      try {
+	         bs = new BufferedOutputStream(new FileOutputStream("C:\\Users\\user\\Desktop\\jsonEx\\Sample.json"));
+	         String str = sb.toString();
+	         bs.write(str.getBytes()); //Byte형으로만 넣을 수 있음
+
+	      } catch (Exception e) {
+	                   e.getStackTrace();
+	         // TODO: handle exception
+	      }finally {
+	         bs.close();
+	      } 
 
 
 
