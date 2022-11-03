@@ -20,9 +20,9 @@ public class ReadJsonFile {
 		JSONArray array;
 		JsonVO jvo;
 		try {
-			FileReader reader = new FileReader("abc.json");
-			array = (JSONArray)parser.parse(reader);
-
+			FileReader reader = new FileReader("Sample.json");
+			JSONObject a = (JSONObject)parser.parse(reader);
+			array = (JSONArray)a.get("data");
 
 			for(int i = 0 ; i < array.size(); i++) {
 				JSONObject obj = (JSONObject)array.get(i);
@@ -34,7 +34,7 @@ public class ReadJsonFile {
 					String key = (String) it.next();
 					if(key.equals("동명"))jvo.set동명((String)obj.get(key));
 					else if(key.equals("설치주소"))jvo.set설치주소((String)obj.get(key));
-					else if(key.equals("위 치"))jvo.set위치((String)obj.get(key));
+					else if(key.equals("위  치"))jvo.set위치((String)obj.get(key));
 
 				}
 				list.add(jvo);
